@@ -1,0 +1,7 @@
+
+Order 1 placed successfully: {'name': 'Tux', 'quantity': '5'}.
+Order 2 placed successfully: {'name': 'Tux', 'quantity': '5'}.
+Order 3 placed successfully: {'name': 'Tux', 'quantity': '5'}.
+Order 4 placed successfully: {'name': 'Tux', 'quantity': '5'}.
+Order 5 placed successfully: {'name': 'Tux', 'quantity': '5'}.
+Order 6 placed successfully: {'name': 'Tux', 'quantity': '5'}.

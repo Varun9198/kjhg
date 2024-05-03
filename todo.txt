@@ -1,0 +1,67 @@
+1. Order service call to catalog service for get
+2. Cache implementation
+3. cache invalidation (delete from order to fe)
+4. Health check API
+    1. FE config
+        - order service ports
+    2. ping/pong from/to leader
+    3. if leader unavailable,
+        1. find next leader
+        2. update leader instance variable
+5. Cache integration
+
+
+
+
+
+
+FE Health check functionality:
+
+make it synchronous
+
+ __init__:
+    leader = ''
+    leader election
+    loop:
+        health check
+
+1. Health check :
+    - keep pinging all nodes, inform leader
+    - if leader failure, call leader-election
+2. Leader election:
+    - pinging all node one by one
+    - set leader when found 'Running'
+
+
+
+Order:
+
+   __init__:
+        leader = ''
+
+    respond_health_check:
+        if ping_leader != ''
+                    set leader
+                    respond 'Pending'
+                    fetch data from leader
+                    keep responding 'Pending'
+                    when copy complete respond 'Running' to next ping
+                else:
+                    respond 'Running'
+        update leader if needed using ping_leader
+
+
+
+
+VERY IMPORTANTTTTTTTTTTT : revert catalog logic
+
+multiple order_log files
+
+order logic
+    1. cache invalidation after successful put request in catalog
+    2. order receives success from catalog
+    3. order leader to replica new log flush
+
+
+
+

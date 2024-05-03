@@ -1,0 +1,5 @@
+self_port:
+  - 8004
+other_port:
+  - 8003
+  - 8002

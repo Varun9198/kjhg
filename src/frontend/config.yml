@@ -1,0 +1,4 @@
+order_service_ports:
+  - 8004
+  - 8003
+  - 8002
